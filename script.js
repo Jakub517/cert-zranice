@@ -54,6 +54,9 @@ function nastavJidlo() {
                         case "olinu":
                         certeZvracej(13000);
                         break;
+                        case "párky":
+                        certeZvracej(50000);
+                        break;
                 }
         }
 
