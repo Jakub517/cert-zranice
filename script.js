@@ -1,6 +1,14 @@
 var praveZraneJidlo = "";
 var jizSezranaJidla = [];
 
+function zkontrolujHeslo() {
+    var heslo = document.getElementById("heslo").value;
+    if(heslo == "certjezrout"){
+        document.getElementById("prihlasovani").style.display = "none";
+        document.getElementById("zabezpeceno").style.display = "block";
+    }
+}
+
 function nastavJidlo() {
     if(document.getElementById("jidlo").value != "") {
         if(praveZraneJidlo != "") {
@@ -10,15 +18,31 @@ function nastavJidlo() {
             if(jizSezranaJidla.length == 3){
                 document.getElementById("varovani").innerHTML = "Asi bude zvracet. ";
             } else if(jizSezranaJidla.length > 3){
-                document.getElementById("varovani").innerHTML = "Pozvracel se. ";
-                document.getElementById("tlacitkoZer").disabled = true;
-                setTimeout(vyprazdniCerta, 5000);
+                certeZvracej(5000);
             }
         }
 
         praveZraneJidlo = document.getElementById("jidlo").value;
         document.getElementById("informace").innerHTML = "Čert žere " + praveZraneJidlo + ". ";
+
+        switch(praveZraneJidlo.toLowerCase()){
+            case "asistentku":
+                certeZvracej(10000);
+                break;
+            case "halinu":
+                certeZvracej(15000);
+                break;
+            case "alici":
+                certeZvracej(20000);
+                break;
+        }
     }
+}
+
+function certeZvracej(pocetMilisekund) {
+    document.getElementById("varovani").innerHTML = "Pozvracel se. ";
+    document.getElementById("tlacitkoZer").disabled = true;
+    setTimeout(vyprazdniCerta, pocetMilisekund);
 }
 
 function vyprazdniCerta() {

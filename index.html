@@ -10,19 +10,25 @@
     </head>
     <body>
 
-        <h1>Čertova žranice</h1>
-        <label for="jidlo">Co žere Čert?</label><input id="jidlo" type="text">
-        <input type="button" id="tlacitkoZer" value="žer!" onclick="nastavJidlo()">
-        <input type="button" value="Jak je Čertovi?" onclick="zkontrolujTeplotu()">
-        <hr>
-        <div>
-            <span id="informace"></span>
-            <span id="historie"></span>
-            <span id="varovani"></span>
+        <div id="prihlasovani">
+            <label for="heslo">Heslo: </label><input id="heslo" type="password" onkeyup="zkontrolujHeslo()">
         </div>
-        <div>
-            <span id="teplota"></span>
+        <div id="zabezpeceno" style="display: none;">
+            <h1>Čertova žranice</h1>
+            <label for="jidlo">Co žere Čert?</label><input id="jidlo" type="text">
+            <input type="button" id="tlacitkoZer" value="žer!" onclick="nastavJidlo()">
+            <input type="button" value="Jak je Čertovi?" onclick="zkontrolujTeplotu()">
+            <hr>
+            <div>
+                <span id="informace"></span>
+                <span id="historie"></span>
+                <span id="varovani"></span>
+            </div>
+            <div>
+                <span id="teplota"></span>
+            </div>
         </div>
+        
         
 
 
