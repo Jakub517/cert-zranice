@@ -3,7 +3,7 @@ var jizSezranaJidla = [];
 
 function zkontrolujHeslo() {
     var heslo = document.getElementById("heslo").value;
-    if(heslo == "certjezrout"){
+    if(heslo == "cert"){
         document.getElementById("prihlasovani").style.display = "none";
         document.getElementById("zabezpeceno").style.display = "block";
     }
@@ -44,6 +44,9 @@ function nastavJidlo() {
                         break;
                     case "alici":
                         certeZvracej(20000);
+                        break;
+                        case "olinu":
+                        certeZvracej(13000);
                         break;
                 }
         }
