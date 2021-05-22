@@ -16,31 +16,38 @@ function zmenPozadi() {
 
 function nastavJidlo() {
     if(document.getElementById("jidlo").value != "") {
-        if(praveZraneJidlo != "") {
-            jizSezranaJidla.push(praveZraneJidlo);
-            document.getElementById("historie").innerHTML = "Už sežral " + jizSezranaJidla.join(", ") + ". ";
-        
-            if(jizSezranaJidla.length == 3){
-                document.getElementById("varovani").innerHTML = "Asi bude zvracet. ";
-            } else if(jizSezranaJidla.length > 3){
-                certeZvracej(5000);
-            }
+        switch(document.getElementById("jidlo").value.toLowerCase()){
+            case "medříka":
+                alert("Čertovi nechutná Medřík!");
+                break;
+            default:
+                if(praveZraneJidlo != "") {
+                    jizSezranaJidla.push(praveZraneJidlo);
+                    document.getElementById("historie").innerHTML = "Už sežral " + jizSezranaJidla.join(", ") + ". ";
+                
+                    if(jizSezranaJidla.length == 3){
+                        document.getElementById("varovani").innerHTML = "Asi bude zvracet. ";
+                    } else if(jizSezranaJidla.length > 3){
+                        certeZvracej(5000);
+                    }
+                }
+
+                praveZraneJidlo = document.getElementById("jidlo").value;
+                document.getElementById("informace").innerHTML = "Čert žere " + praveZraneJidlo + ". ";
+
+                switch(praveZraneJidlo.toLowerCase()){
+                    case "asistentku":
+                        certeZvracej(10000);
+                        break;
+                    case "halinu":
+                        certeZvracej(15000);
+                        break;
+                    case "alici":
+                        certeZvracej(20000);
+                        break;
+                }
         }
 
-        praveZraneJidlo = document.getElementById("jidlo").value;
-        document.getElementById("informace").innerHTML = "Čert žere " + praveZraneJidlo + ". ";
-
-        switch(praveZraneJidlo.toLowerCase()){
-            case "asistentku":
-                certeZvracej(10000);
-                break;
-            case "halinu":
-                certeZvracej(15000);
-                break;
-            case "alici":
-                certeZvracej(20000);
-                break;
-        }
     }
 }
 
