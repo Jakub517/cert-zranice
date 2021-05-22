@@ -20,6 +20,12 @@ function nastavJidlo() {
             case "medříka":
                 alert("Čertovi nechutná Medřík!");
                 break;
+            case "med":
+                alert("Čertovi nechutná med ten je pro medvědy a medvěd pro Čerta!");
+                break;
+            case "učitele":
+                alert("ty zrovna nemusí!");
+                break;
             default:
                 if(praveZraneJidlo != "") {
                     jizSezranaJidla.push(praveZraneJidlo);
