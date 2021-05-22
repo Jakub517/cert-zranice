@@ -1,6 +1,9 @@
 var praveZraneJidlo = "";
 var jizSezranaJidla = [];
 
+var hrac1Zvire = "";
+var hrac2Zvire = "";
+
 function zkontrolujHeslo() {
     var heslo = document.getElementById("heslo").value;
     if(heslo == "cert"){
@@ -91,4 +94,110 @@ function zkontrolujTeplotu() {
     }
     document.getElementById("teplota").innerHTML = "V Boršově je " + parseInt(teplotaVBorsove) + " stupňů, takže je Čertovi " + certuvPocit + ". ";
     })
+}
+
+function hraj(hrac, zvire){
+    switch(hrac){
+        case 1:
+            hrac1Zvire = zvire;
+            break;
+        case 2:
+            hrac2Zvire = zvire;
+            break;
+    }
+
+    zablokujTlacitka(hrac);
+    
+    if (hrac1Zvire != "" && hrac2Zvire != ""){
+        var vysledek = zjistiVysledek();
+        var text = "";
+        text += "Hráč 1 vybral " + zjistiDruhyPad(hrac1Zvire) + " a Hráč 2 vybral " + zjistiDruhyPad(hrac2Zvire) + ". ";
+        switch(vysledek){
+            case 0:
+                text += "Nikdo nikoho nesežral, takže ";
+                text += "je to remíza. ";
+                break;
+            case 1:
+                text += hrac1Zvire + " sežral " + zjistiDruhyPad(hrac2Zvire) + ", takže ";
+                text += "vyhrál Hráč 1. ";
+                break;
+            case 2:
+                text += hrac2Zvire + " sežral " + zjistiDruhyPad(hrac1Zvire) + ", takže ";
+                text += "vyhrál Hráč 2. ";
+                break;
+        }
+
+        document.getElementById("vysledek").innerHTML = text;
+        odblokujTlacitka();
+        hrac1Zvire = "";
+        hrac2Zvire = "";
+    }
+}
+
+function zjistiDruhyPad(zvire){
+    switch(zvire){
+        case "Čert":
+            return "Čerta";
+        case "Medvěd":
+            return "Medvěda";
+        case "Had":
+            return "Hada";
+    }
+}
+
+function zablokujTlacitka(hrac){
+    switch(hrac){
+        case 1:
+            document.getElementById("1a").disabled = true;
+            document.getElementById("1b").disabled = true;
+            document.getElementById("1c").disabled = true;
+            break;
+        case 2:
+            document.getElementById("2a").disabled = true;
+            document.getElementById("2b").disabled = true;
+            document.getElementById("2c").disabled = true;
+            break;
+        
+    }
+}
+
+function odblokujTlacitka(){
+    document.getElementById("1a").disabled = false;
+    document.getElementById("1b").disabled = false;
+    document.getElementById("1c").disabled = false;
+    document.getElementById("2a").disabled = false;
+    document.getElementById("2b").disabled = false;
+    document.getElementById("2c").disabled = false;
+}
+
+function zjistiVysledek(){
+    switch(hrac1Zvire){
+        case "Čert":
+            switch(hrac2Zvire){
+                case "Čert":
+                    return 0;
+                case "Medvěd":
+                    return 1;
+                case "Had":
+                    return 2;
+            }
+        case "Medvěd":
+            switch(hrac2Zvire){
+                case "Čert":
+                    return 2;
+                case "Medvěd":
+                    return 0;
+                case "Had":
+                    return 1;
+            }
+        case "Had":
+            switch(hrac2Zvire){
+                case "Čert":
+                    return 1;
+                case "Medvěd":
+                    return 2;
+                case "Had":
+                    return 0;
+            }
+    }
 }
