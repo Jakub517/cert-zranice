@@ -7,6 +7,11 @@ function zkontrolujHeslo() {
         document.getElementById("prihlasovani").style.display = "none";
         document.getElementById("zabezpeceno").style.display = "block";
     }
+}    
+
+function zmenPozadi() {
+    var pozadi = document.getElementById("pozadi").value;
+    document.body.style.backgroundColor = pozadi;
 }
 
 function nastavJidlo() {

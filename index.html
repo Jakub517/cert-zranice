@@ -12,6 +12,12 @@
 
         <div id="prihlasovani">
             <label for="heslo">Heslo: </label><input id="heslo" type="password" onkeyup="zkontrolujHeslo()">
+           <br>
+            <label for="pozadi">Pozadí: </label>
+            <select id="pozadi" onchange="zmenPozadi()">
+                <option value="#ffffff">Bílá(výchozí)</option>
+                <option value="#f5a038">Oranžová</option>
+            </select>
         </div>
         <div id="zabezpeceno" style="display: none;">
             <h1>Čertova žranice</h1>
@@ -32,7 +38,7 @@
         
 
         <div id="paticka">
-           verze: 2.0 
+           verze: 2.1 
         </div>
 
 
