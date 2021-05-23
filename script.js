@@ -29,6 +29,9 @@ function nastavJidlo() {
             case "učitele":
                 alert("ty zrovna nemusí!");
                 break;
+            case "čerta":
+                alert("Čert nežere čerty to by byl kanibal a to není!");
+                break;
             default:
                 if(praveZraneJidlo != "") {
                     jizSezranaJidla.push(praveZraneJidlo);
