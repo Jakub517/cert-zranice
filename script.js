@@ -3,6 +3,8 @@ var jizSezranaJidla = [];
 
 var hrac1Zvire = "";
 var hrac2Zvire = "";
+var hrac1Skore = 0;
+var hrac2Skore = 0;
 
 function zkontrolujHeslo() {
     var heslo = document.getElementById("heslo").value;
@@ -114,22 +116,25 @@ function hraj(hrac, zvire){
     if (hrac1Zvire != "" && hrac2Zvire != ""){
         var vysledek = zjistiVysledek();
         var text = "";
-        text += "Hráč 1 vybral " + zjistiDruhyPad(hrac1Zvire) + " a Hráč 2 vybral " + zjistiDruhyPad(hrac2Zvire) + ". ";
+        text += "Hráč 1 vybral <b>" + zjistiDruhyPad(hrac1Zvire) + "</b> a Hráč 2 vybral <b>" + zjistiDruhyPad(hrac2Zvire) + "</b>. ";
         switch(vysledek){
             case 0:
                 text += "Nikdo nikoho nesežral, takže ";
-                text += "je to remíza. ";
+                text += "je to <b>remíza</b>. ";
                 break;
             case 1:
+                hrac1Skore += 1;
                 text += hrac1Zvire + " sežral " + zjistiDruhyPad(hrac2Zvire) + ", takže ";
-                text += "vyhrál Hráč 1. ";
+                text += "<b>vyhrál Hráč 1</b>. ";
                 break;
             case 2:
+                hrac2Skore += 1;
                 text += hrac2Zvire + " sežral " + zjistiDruhyPad(hrac1Zvire) + ", takže ";
-                text += "vyhrál Hráč 2. ";
+                text += "<b>vyhrál Hráč 2</b>. ";
                 break;
         }
 
+        text += "Aktuální skóre je: <b>" + hrac1Skore + " : " + hrac2Skore +"</b>. ";
         document.getElementById("vysledek").innerHTML = text;
         odblokujTlacitka();
         hrac1Zvire = "";
