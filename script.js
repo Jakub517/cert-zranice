@@ -40,6 +40,12 @@ function nastavJidlo() {
                     case "zeleninu":
                         alert("Čert sežral zeleninu ale bylo by lepší maso.");
                         break;
+                        case "licenci":
+                        alert("Licenci vlastní společnost Jakub. Studio Čert. Desing by: Jakub");
+                        break;
+                        case "licence":
+                        alert("Licenci vlastní společnost Jakub. Studio Čert. Desing by: Jakub");
+                        break;
             default:
                 if(praveZraneJidlo != "") {
                     jizSezranaJidla.push(praveZraneJidlo);
