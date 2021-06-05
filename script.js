@@ -34,6 +34,12 @@ function nastavJidlo() {
             case "čerta":
                 alert("Čert nežere čerty to by byl kanibal a to není!");
                 break;
+                case "ovoce":
+                    alert("Čert sežral ovoce ale bylo by lepší maso.");
+                    break;
+                    case "zeleninu":
+                        alert("Čert sežral zeleninu ale bylo by lepší maso.");
+                        break;
             default:
                 if(praveZraneJidlo != "") {
                     jizSezranaJidla.push(praveZraneJidlo);
@@ -63,7 +69,7 @@ function nastavJidlo() {
                         certeZvracej(13000);
                         break;
                         case "párky":
-                        certeZvracej(50000);
+                        certeZvracej(5000);
                         break;
                 }
         }
