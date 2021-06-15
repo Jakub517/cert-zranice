@@ -39,13 +39,18 @@ function nastavJidlo() {
                     break;
                     case "zeleninu":
                         alert("Čert sežral zeleninu ale bylo by lepší maso.");
-                        break;
-                        case "licenci":
+                    break;
+                    case "licenci":
+                        alert("Licenci vlastní společnost Jakub. Studio Čert. Desing by: Jakub");
+                    break;
+                    case "licence":
                         alert("Licenci vlastní společnost Jakub. Studio Čert. Desing by: Jakub");
                         break;
-                        case "licence":
-                        alert("Licenci vlastní společnost Jakub. Studio Čert. Desing by: Jakub");
                         break;
+                    case "hovno":
+                        alert("To si přehnal! jseš normální?");
+                        break;
+
             default:
                 if(praveZraneJidlo != "") {
                     jizSezranaJidla.push(praveZraneJidlo);
@@ -76,6 +81,21 @@ function nastavJidlo() {
                         break;
                         case "párky":
                         certeZvracej(5000);
+                        break;
+                        case "toner":
+                        certeZvracej(10000);
+                        break;
+                    case "tiskárnu":
+                        certeZvracej(15000);
+                        break;
+                    case "papír":
+                        certeZvracej(20000);
+                        break;
+                        case "hnůj":
+                        certeZvracej(15000);
+                        break;
+                        case "zkažené maso":
+                        certeZvracej(10000);
                         break;
                 }
         }
