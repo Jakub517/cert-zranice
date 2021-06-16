@@ -128,6 +128,7 @@ function zkontrolujTeplotu() {
         certuvPocit = "zima";
     } else if (teplotaVBorsove>18){
         certuvPocit = "teplo";
+        
     }
     document.getElementById("teplota").innerHTML = "V Boršově je " + parseInt(teplotaVBorsove) + " stupňů, takže je Čertovi " + certuvPocit + ". ";
     })
