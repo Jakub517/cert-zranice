@@ -123,14 +123,16 @@ function zkontrolujTeplotu() {
     .then(response => response.json())
     .then(json => {
     var teplotaVBorsove = json.main.temp;
-    var certuvPocit = "akorát";
-    if(teplotaVBorsove<12){
-        certuvPocit = "zima";
+    var certuvPocit = "je Čertovi akorát";
+    if (teplotaVBorsove>30){
+        certuvPocit = "se Čert usmažil"
+    } else if(teplotaVBorsove<12){
+        certuvPocit = "je Čertovi zima";
     } else if (teplotaVBorsove>18){
-        certuvPocit = "teplo";
+        certuvPocit = "je Čertovi teplo";
         
     }
-    document.getElementById("teplota").innerHTML = "V Boršově je " + parseInt(teplotaVBorsove) + " stupňů, takže je Čertovi " + certuvPocit + ". ";
+    document.getElementById("teplota").innerHTML = "V Boršově je " + parseInt(teplotaVBorsove) + " stupňů, takže " + certuvPocit + ". ";
     })
 }
 
