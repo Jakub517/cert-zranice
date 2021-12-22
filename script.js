@@ -57,10 +57,10 @@ function nastavJidlo() {
                 document.getElementById("informace").innerHTML = "Čert žere " + praveZraneJidlo + ". ";
 
                 switch(praveZraneJidlo.toLowerCase()){
-                    case "asistentku":
+                    case "auto":
                         certeZvracej(10000);
                         break;
-                    case "halinu":
+                    case "kolo":
                         certeZvracej(15000);
                         break;
                     case "učebnici":
