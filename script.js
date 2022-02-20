@@ -40,6 +40,12 @@ function nastavJidlo() {
             case "zeleninu":
                 alert("Čert sežral zeleninu ale bylo by lepší maso.");
                 break;
+            case "nic":
+                alert("Co přesně?");
+                break;
+            case "jídlo":
+                alert("Jaké jídlo?");
+                 break;
 
             default:
                 if(praveZraneJidlo != "") {
@@ -78,10 +84,10 @@ function nastavJidlo() {
                     case "papír":
                         certeZvracej(20000);
                         break;
-                        case "hnůj":
+                    case "hnůj":
                         certeZvracej(15000);
                         break;
-                        case "zkažené maso":
+                    case "zkažené maso":
                         certeZvracej(10000);
                         break;
                 }
