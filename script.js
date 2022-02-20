@@ -45,7 +45,10 @@ function nastavJidlo() {
                 break;
             case "jídlo":
                 alert("Jaké jídlo?");
-                 break;
+                break;
+            case "počítač":
+                alert("Čert nejí počítače");
+                break;
 
             default:
                 if(praveZraneJidlo != "") {
