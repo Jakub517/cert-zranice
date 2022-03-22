@@ -44,8 +44,8 @@
         <div id="zabezpeceno" style="display: none;">
             <h1>Čertova žranice</h1>
             <label for="jidlo">Co žere Čert?</label><input id="jidlo" type="text">
-            <input type="button" id="tlacitkoZer" value="žer!" onclick="nastavJidlo()">
-            <input type="button" value="Jak je Čertovi?" onclick="zkontrolujTeplotu()">
+            <input type="button" id="tlacitkoZer" class="button button8" value="žer!" onclick="nastavJidlo()">
+            <input type="button" class="button button7" value="Jak je Čertovi?" onclick="zkontrolujTeplotu()">
             <hr>
             <div>
                 <span id="informace"></span>
@@ -63,15 +63,15 @@
                 <div>
                     
                     <b style="color:blue;"><h2>hráč 1</h2></b>
-                    <button id="1a" onclick="hraj(1, 'Čert')">Čert</button>
-                    <button id="1b" onclick="hraj(1, 'Medvěd')">Medvěd</button>
-                    <button id="1c" onclick="hraj(1, 'Had')">Had</button>
+                    <button class="button button1" id="1a" onclick="hraj(1, 'Čert')">Čert</button>
+                    <button class="button button2" id="1b" onclick="hraj(1, 'Medvěd')">Medvěd</button>
+                    <button class="button button3"id="1c" onclick="hraj(1, 'Had')">Had</button>
                 </div>
                 <div>
                     <b style="color: green;"><h2>Hráč 2</h2></b>
-                    <button id="2a" onclick="hraj(2, 'Čert')">Čert</button>
-                    <button id="2b" onclick="hraj(2, 'Medvěd')">Medvěd</button>
-                    <button id="2c" onclick="hraj(2, 'Had')">Had</button>
+                    <button class="button button4" id="2a" onclick="hraj(2, 'Čert')">Čert</button>
+                    <button class="button button5" id="2b" onclick="hraj(2, 'Medvěd')">Medvěd</button>
+                    <button class="button button6" id="2c" onclick="hraj(2, 'Had')">Had</button>
                 </div>
                 <div id="vysledek"></div>
             </div>
@@ -107,7 +107,7 @@
 
 
         <div id="paticka">
-            verze: 3.7.3 <br>
+            verze: 4.0.0 <br>
         © 2022 - Čertova žranice - original
         </div>
 
